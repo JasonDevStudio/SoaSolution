@@ -13,9 +13,9 @@ namespace Library.WcfService
     [SerializableAttribute]
     public class SoaTestService : ISoaTestService
     {
+        [SerializableAttribute]
         delegate object OperateDelegate(out string resultMsg,object value);
-         
-        [OperationContract]
+          
         public object Operate(out string resultMsg, byte[] bytes)
         { 
             resultMsg = string.Empty;

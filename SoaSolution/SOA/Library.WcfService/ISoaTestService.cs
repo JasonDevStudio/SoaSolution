@@ -7,13 +7,13 @@ using System.Text;
 
 namespace Library.WcfService
 { 
-    [ServiceContract]
+    [ServiceContract] 
     public interface ISoaTestService
     {
         /// <summary>
-        /// 查询
+        /// 操作
         /// </summary> 
-        [OperationContract]
+        [OperationContract] 
         object Operate(out string resultMsg, byte[] bytes); 
     }
 }

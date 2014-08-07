@@ -12,11 +12,7 @@ namespace Library.WcfServerConsole
         {
             try
             {
-                Uri[] baseAddresses = new Uri[] { 
-                  new Uri("net.tcp://localhost:8080/Design_Time_Addresses/ConsoleApplication1/Service1/")
-              };
-
-                ServiceHost host = new ServiceHost(typeof(Library.WcfService.SoaTestService));
+                ServiceHost host = new ServiceHost(typeof(WcfService.SoaTestService));
                 host.Open();
 
                 Console.WriteLine("服务已启动！");
