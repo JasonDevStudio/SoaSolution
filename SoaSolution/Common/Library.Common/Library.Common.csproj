@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E393AF92-4133-4E0C-80E2-735BBC056A4E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Library.Common</RootNamespace>
+    <AssemblyName>Library.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=7.4.1.0, Culture=neutral, PublicKeyToken=00725b1ceb58d0a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>DLL\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorityHelper.cs" />
+    <Compile Include="CommonExtensions.cs" />
+    <Compile Include="CommonMethod.cs" />
+    <Compile Include="Compress.cs" />
+    <Compile Include="DropDownListHelper.cs" />
+    <Compile Include="EncryptDecrypt.cs" />
+    <Compile Include="ExportToExcel.cs" />
+    <Compile Include="LogManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultBase.cs" />
+    <Compile Include="SerializerDeserialize.cs" />
+    <Compile Include="SplitMergeLibrary\PdfFile.cs" />
+    <Compile Include="SplitMergeLibrary\PdfFileObject.cs" />
+    <Compile Include="SplitMergeLibrary\PdfFileStreamObject.cs" />
+    <Compile Include="SplitMergeLibrary\PdfObjectType.cs" />
+    <Compile Include="SplitMergeLibrary\PdfSplitter.cs" />
+    <Compile Include="SplitMergeLibrary\PdfSplitterMerger.cs" />
+    <Compile Include="SplitMergeLibrary\Project.cs" />
+    <Compile Include="SplitMergeLibrary\ProjectPart.cs" />
+    <Compile Include="UploadHelper.cs" />
+    <Compile Include="UtilityScript.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DLL\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\Aspose.Cells.dll" />
+    <Content Include="DLL\Aspose.Cells.GridDesktop.dll" />
+    <Content Include="DLL\Aspose.Cells.GridDesktop.xml" />
+    <Content Include="DLL\Aspose.Cells.GridWeb.dll" />
+    <Content Include="DLL\Aspose.Cells.GridWeb.xml" />
+    <Content Include="DLL\Aspose.Cells.xml" />
+    <Content Include="DLL\DevExpress.Charts.v12.1.Core.dll" />
+    <Content Include="DLL\DevExpress.Common.Utils.v12.dll" />
+    <Content Include="DLL\DevExpress.Data.v12.1.dll" />
+    <Content Include="DLL\DevExpress.Data.v12.1.resources.dll" />
+    <Content Include="DLL\DevExpress.Data.v12.1.xml" />
+    <Content Include="DLL\DevExpress.PivotGrid.v12.1.Core.dll" />
+    <Content Include="DLL\DevExpress.PivotGrid.v12.1.Core.resources.dll" />
+    <Content Include="DLL\DevExpress.PivotGrid.v12.1.Core.xml" />
+    <Content Include="DLL\DevExpress.Printing.v12.1.Core.dll" />
+    <Content Include="DLL\DevExpress.Printing.v12.1.Core.resources.dll" />
+    <Content Include="DLL\DevExpress.Printing.v12.1.Core.xml" />
+    <Content Include="DLL\DevExpress.RichEdit.v12.1.Core.dll" />
+    <Content Include="DLL\DevExpress.RichEdit.v12.1.Core.resources.dll" />
+    <Content Include="DLL\DevExpress.RichEdit.v12.1.Core.xml" />
+    <Content Include="DLL\DevExpress.Utils.v12.1.dll" />
+    <Content Include="DLL\DevExpress.Utils.v12.1.resources.dll" />
+    <Content Include="DLL\DevExpress.Utils.v12.1.xml" />
+    <Content Include="DLL\DevExpress.Web.Mvc.v12.1.dll" />
+    <Content Include="DLL\DevExpress.Web.Mvc.v12.1.xml" />
+    <Content Include="DLL\DevExpress.Web.v12.1.dll" />
+    <Content Include="DLL\DevExpress.Web.v12.1.resources.dll" />
+    <Content Include="DLL\DevExpress.Web.v12.1.xml" />
+    <Content Include="DLL\DevExpress.XtraCharts.v12.1.dll" />
+    <Content Include="DLL\DevExpress.XtraCharts.v12.1.resources.dll" />
+    <Content Include="DLL\DevExpress.XtraCharts.v12.1.xml" />
+    <Content Include="DLL\DevExpress.XtraEditors.v12.1.dll" />
+    <Content Include="DLL\DevExpress.XtraEditors.v12.1.resources.dll" />
+    <Content Include="DLL\DevExpress.XtraEditors.v12.1.xml" />
+    <Content Include="DLL\DevExpress.XtraPivotGrid.v12.1.dll" />
+    <Content Include="DLL\DevExpress.XtraPivotGrid.v12.1.resources.dll" />
+    <Content Include="DLL\DevExpress.XtraPivotGrid.v12.1.xml" />
+    <Content Include="DLL\DevExpress.XtraReports.v12.1.dll" />
+    <Content Include="DLL\DevExpress.XtraReports.v12.1.resources.dll" />
+    <Content Include="DLL\DevExpress.XtraReports.v12.1.Web.dll" />
+    <Content Include="DLL\DevExpress.XtraReports.v12.1.Web.resources.dll" />
+    <Content Include="DLL\DevExpress.XtraReports.v12.1.Web.xml" />
+    <Content Include="DLL\DevExpress.XtraReports.v12.1.xml" />
+    <Content Include="DLL\ILIMS.BasicData.dll" />
+    <Content Include="DLL\ILIMS.Common.dll" />
+    <Content Include="DLL\ILIMS.Customs.dll" />
+    <Content Include="DLL\Library.CommonReport.dll" />
+    <Content Include="DLL\Library.Facade.Report.dll" />
+    <Content Include="DLL\Library.Logic.Report.dll" />
+    <Content Include="DLL\Library.Model.Report.dll" />
+    <Content Include="DLL\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="DLL\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="DLL\Microsoft.Practices.EnterpriseLibrary.Common.xml" />
+    <Content Include="DLL\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="DLL\Microsoft.Practices.EnterpriseLibrary.Data.xml" />
+    <Content Include="DLL\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="DLL\Microsoft.Practices.ServiceLocation.XML" />
+    <Content Include="DLL\Microsoft.Practices.Unity.dll" />
+    <Content Include="DLL\Microsoft.Practices.Unity.Interception.dll" />
+    <Content Include="DLL\Microsoft.Practices.Unity.Interception.xml" />
+    <Content Include="DLL\Microsoft.Practices.Unity.xml" />
+    <Content Include="DLL\MvcCaptcha.dll" />
+    <Content Include="DLL\System.Web.Mvc.dll" />
+    <Content Include="DLL\System.Web.Mvc.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library.StringItemDict\Library.StringItemDict.csproj">
+      <Project>{46d6231d-595e-4654-bef8-54fbe859ada1}</Project>
+      <Name>Library.StringItemDict</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
