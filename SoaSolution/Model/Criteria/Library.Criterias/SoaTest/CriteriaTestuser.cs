@@ -6,7 +6,8 @@ using System.Text;
 
 namespace Library.Criterias.SoaTest
 {
-    public class CriteriaTestuser : BaseCriteria
+    [SerializableAttribute]
+    public class CriteriaTestuser 
     {
         public string UName { get; set; }
          

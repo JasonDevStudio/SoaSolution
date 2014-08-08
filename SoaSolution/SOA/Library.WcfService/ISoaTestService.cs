@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.Models.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -13,7 +14,8 @@ namespace Library.WcfService
         /// <summary>
         /// 操作
         /// </summary> 
-        [OperationContract] 
-        object Operate(out string resultMsg, byte[] bytes); 
+        [OperationContract]
+        byte[] Operate(out string resultMsg, byte[] bytes);
+         
     }
 }

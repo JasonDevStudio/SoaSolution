@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Library.Criterias.Base
 {
+    [SerializableAttribute]
     public class BaseCriteria
     {
     }

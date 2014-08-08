@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Library.Facade.SoaTest.Interfaces
+namespace Library.Facade.SoaTest
 {
     public interface IFacadeTestUser
     {
@@ -15,6 +15,6 @@ namespace Library.Facade.SoaTest.Interfaces
         /// <param name="resultMsg">执行结果</param> 
         /// <param name="criteria">查询条件</param>
         /// <returns>泛型</returns>
-        IList<ModelTestuser> QueryTestuserList(out string resultMsg, CriteriaTestuser criteria);
+        IList<ModelTestuser> QueryTestuserList(out string resultMsg, object criteria);
     }
 }

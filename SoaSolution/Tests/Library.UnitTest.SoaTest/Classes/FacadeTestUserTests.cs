@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Library.Facade.SoaTest.Classes;
+using System.Text; 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Library.Facade.SoaTest.Interfaces;
+using Library.Facade.SoaTest;
 using Library.Criterias.SoaTest;
 namespace Library.Facade.SoaTest.Classes.Tests
 {

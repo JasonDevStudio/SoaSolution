@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text; 
 using Library.StringItemDict;
-using Library.Facade.SoaTest.Interfaces;
-using Library.Facade.SoaTest.Classes;  
+using Library.Facade.SoaTest; 
 
 namespace Library.Facade.SoaTest
 {

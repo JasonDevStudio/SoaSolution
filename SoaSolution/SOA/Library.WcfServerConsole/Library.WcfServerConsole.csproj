@@ -52,6 +52,22 @@
       <Project>{e393af92-4133-4e0c-80e2-735bbc056a4e}</Project>
       <Name>Library.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Common\Library.StringItemDict\Library.StringItemDict.csproj">
+      <Project>{46d6231d-595e-4654-bef8-54fbe859ada1}</Project>
+      <Name>Library.StringItemDict</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Facade\Library.Facade.SoaTest\Library.Facade.SoaTest.csproj">
+      <Project>{78787149-a1d8-47e2-9be7-ae9a05b1704e}</Project>
+      <Name>Library.Facade.SoaTest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Model\Criteria\Library.Criterias\Library.Criterias.csproj">
+      <Project>{162686ed-d97e-48ec-9396-bf6da601e5d9}</Project>
+      <Name>Library.Criterias</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Model\Models\Library.Models\Library.Models.csproj">
+      <Project>{9be1e95e-1d8a-4b50-8974-f96ce7bc1a9e}</Project>
+      <Name>Library.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Library.WcfService\Library.WcfService.csproj">
       <Project>{15b3e0d2-6217-493a-a690-158c497f5318}</Project>
       <Name>Library.WcfService</Name>
@@ -59,9 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

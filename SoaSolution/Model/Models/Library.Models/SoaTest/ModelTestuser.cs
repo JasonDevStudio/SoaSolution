@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Linq; 
 using System.Text;
 
 namespace Library.Models.SoaTest
 {
+    [SerializableAttribute]
     public class ModelTestuser
     {
         public int Uid { get; set; }

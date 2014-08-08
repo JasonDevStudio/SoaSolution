@@ -146,6 +146,10 @@
     <Content Include="DLL\System.Web.Mvc.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Model\Models\Library.Models\Library.Models.csproj">
+      <Project>{9be1e95e-1d8a-4b50-8974-f96ce7bc1a9e}</Project>
+      <Name>Library.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Library.StringItemDict\Library.StringItemDict.csproj">
       <Project>{46d6231d-595e-4654-bef8-54fbe859ada1}</Project>
       <Name>Library.StringItemDict</Name>
