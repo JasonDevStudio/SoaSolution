@@ -12,10 +12,16 @@ namespace Library.WcfService
     public interface ISoaTestService
     {
         /// <summary>
-        /// 操作
+        /// 统一反射操作
         /// </summary> 
         [OperationContract]
-        byte[] Operate(out string resultMsg, byte[] bytes);
+        byte[] Operate(byte[] bytes);
+
+        /// <summary>
+        /// 类反射操作
+        /// </summary> 
+        [OperationContract]
+        byte[] FacadeTestUserOperate(byte[] bytes);
          
     }
 }

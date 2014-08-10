@@ -10,6 +10,8 @@ namespace Library.Criterias.SoaTest
     public class CriteriaTestuser 
     {
         public string UName { get; set; }
+
+        public int Count { get; set; }
          
     }
 }

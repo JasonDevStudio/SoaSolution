@@ -26,7 +26,7 @@ namespace Library.Logic.SoaTest.Classes
             try
             {
                 //存储过程名称
-                string sql = "SELECT  *  FROM [TestUser]  WHERE (@uname IS NULL OR [UName] =@uname)";
+                string sql = string.Format("SELECT TOP {0} *  FROM [TestUser]  WHERE (@uname IS NULL OR [UName] =@uname)",criteria.Count);
 
                 //参数添加
                 IList<DBParameter> parm = new List<DBParameter>();
