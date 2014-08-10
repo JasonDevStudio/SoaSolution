@@ -26,7 +26,7 @@ namespace WinFormApp
             var resultMsg = string.Empty;
             var criteria = new CriteriaTestuser();
             criteria.UName = null;
-            criteria.Count = 100000;
+            criteria.Count = Convert.ToInt32(textBox1.Text);
 
             OperateClass ope = new OperateClass();
             ope.Assembly = "Library.Facade.SoaTest";
@@ -50,7 +50,7 @@ namespace WinFormApp
             var resultMsg = string.Empty;
             var criteria = new CriteriaTestuser();
             criteria.UName = null;
-            criteria.Count = 100000;
+            criteria.Count = Convert.ToInt32(textBox1.Text);
 
             OperateClass ope = new OperateClass();  
             ope.Method = "QueryTestuserList";
