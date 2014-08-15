@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using Library.Logic.SoaTest.Interfaces;
 using Library.Logic.SoaTest.Factory;
+using System.Data;
 
 namespace Library.Facade.SoaTest
 {
@@ -21,6 +22,13 @@ namespace Library.Facade.SoaTest
         { 
             ILogicTestUser logic = new FactorySoaTest().InstanceSoaTest();
             return logic.QueryTestuserList(out resultMsg, (CriteriaTestuser)criteria);
+        }
+
+
+        public DataSet QueryTable(out string resultMsg, int count = 10)
+        {
+            ILogicTestUser logic = new FactorySoaTest().InstanceSoaTest();
+            return logic.QueryTable(out resultMsg, count);
         }
     }
 }

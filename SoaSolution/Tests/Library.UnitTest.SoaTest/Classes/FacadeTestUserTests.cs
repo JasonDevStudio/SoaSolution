@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text; 
@@ -15,9 +16,11 @@ namespace Library.Facade.SoaTest.Classes.Tests
         {
             IFacadeTestUser facade = new Factories().InstanceTestUser();
             var resultMsg =string.Empty;
-            var criteria = new CriteriaTestuser();
+            var criteria = new CriteriaTestuser() { Count = 100 };
             var list = facade.QueryTestuserList(out resultMsg, criteria);
-            if (list.Count > 0)
+            var data = facade.QueryTable(out resultMsg, count: 20);
+
+            if (list.Count > 0 && data.Tables[0].Rows.Count > 0)
             {
                 Assert.IsTrue(true);
             }

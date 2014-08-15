@@ -13,16 +13,23 @@ namespace Library.Kernel.DataBaseHelper
 {
     public class DBHelper
     {
+        private static string _DbName;
+
         /// <summary>
         /// 数据库名称
         /// </summary>
         public static string DBNAME
         {
             get
+            { 
+                return string.IsNullOrWhiteSpace(_DbName) ? ConfigurationManager.AppSettings["DataAccess"].ToString() :_DbName;
+            }
+            set
             {
-                return ConfigurationManager.AppSettings["DataAccess"].ToString(); 
+                _DbName = value;
             }
         }
+         
 
         /// <summary>
         /// 临时使用这里产生一个其他库连接的事务对象

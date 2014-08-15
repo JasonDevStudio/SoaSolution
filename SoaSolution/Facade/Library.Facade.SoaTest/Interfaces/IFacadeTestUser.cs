@@ -2,6 +2,7 @@
 using Library.Models.SoaTest;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
@@ -16,5 +17,7 @@ namespace Library.Facade.SoaTest
         /// <param name="criteria">查询条件</param>
         /// <returns>泛型</returns>
         IList<ModelTestuser> QueryTestuserList(out string resultMsg, object criteria);
+
+        DataSet QueryTable(out string resultMsg, int count = 10);
     }
 }
