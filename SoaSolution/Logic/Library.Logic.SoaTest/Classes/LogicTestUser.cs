@@ -59,13 +59,12 @@ namespace Library.Logic.SoaTest.Classes
             {
 
                 //存储过程名称
-                string sql = "SELECT * FROM [Article] WHERE id < @uname)"; 
+                string sql = "SELECT * FROM [Article] WHERE id < @uname "; 
 
                 //参数添加
                 IList<DBParameter> parm = new List<DBParameter>();
                 parm.Add(new DBParameter() { ParameterName = "uname", ParameterValue = count, ParameterInOut = BaseDict.ParmIn, ParameterType = DbType.Int32 });
 
-                DBHelper.DBNAME = "SqlServerDataAccess";
 
                 //查询执行
                 data = DBHelper.ExecuteDataSet(sql,parm:parm);

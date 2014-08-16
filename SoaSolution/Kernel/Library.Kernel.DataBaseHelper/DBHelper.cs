@@ -21,15 +21,15 @@ namespace Library.Kernel.DataBaseHelper
         public static string DBNAME
         {
             get
-            { 
-                return string.IsNullOrWhiteSpace(_DbName) ? ConfigurationManager.AppSettings["DataAccess"].ToString() :_DbName;
+            {
+                return string.IsNullOrWhiteSpace(_DbName) ? ConfigurationManager.AppSettings["DataAccess"].ToString() : _DbName;
             }
             set
             {
                 _DbName = value;
             }
         }
-         
+
 
         /// <summary>
         /// 临时使用这里产生一个其他库连接的事务对象
@@ -40,7 +40,7 @@ namespace Library.Kernel.DataBaseHelper
         {
             Database db = null;
             if (string.IsNullOrWhiteSpace(dbName))
-                db = DatabaseFactory.CreateDatabase(DBNAME);
+                db = GetDatabase();
             else
                 db = DatabaseFactory.CreateDatabase(dbName);
             DbConnection con = db.CreateConnection();
@@ -93,7 +93,7 @@ namespace Library.Kernel.DataBaseHelper
         public static DataSet ExecuteDataSet<T>(string sql, bool isStoredProc = false, IList<DBParameter> parm = null, DbTransaction tran = null)
         {
             var ds = new DataSet();
-            var db = DatabaseFactory.CreateDatabase(DBNAME);
+            var db = GetDatabase();
             var cmd = isStoredProc ? db.GetStoredProcCommand(sql) : db.GetSqlStringCommand(sql);
 
             if (parm != null)
@@ -132,7 +132,7 @@ namespace Library.Kernel.DataBaseHelper
         public static DataSet ExecuteDataSet(string sql, bool isStoredProc = false, IList<DBParameter> parm = null, DbTransaction tran = null)
         {
             var ds = new DataSet();
-            var db = DatabaseFactory.CreateDatabase(DBNAME);
+            var db = GetDatabase();
             var cmd = isStoredProc ? db.GetStoredProcCommand(sql) : db.GetSqlStringCommand(sql);
 
             if (parm != null)
@@ -170,7 +170,7 @@ namespace Library.Kernel.DataBaseHelper
         public static int ExecuteNonQuery<T>(string sql, bool isStoredProc = false, IList<DBParameter> parm = null, DbTransaction tran = null)
         {
             int exRes = 0;
-            var db = DatabaseFactory.CreateDatabase(DBNAME);
+            var db = GetDatabase();
             var cmd = isStoredProc ? db.GetStoredProcCommand(sql) : db.GetSqlStringCommand(sql);
 
             if (parm != null)
@@ -209,7 +209,7 @@ namespace Library.Kernel.DataBaseHelper
         public static int ExecuteNonQuery(string sql, bool isStoredProc = false, IList<DBParameter> parm = null, DbTransaction tran = null)
         {
             int exRes = 0;
-            var db = DatabaseFactory.CreateDatabase(DBNAME);
+            var db = GetDatabase();
             var cmd = isStoredProc ? db.GetStoredProcCommand(sql) : db.GetSqlStringCommand(sql);
             if (parm != null)
             {
@@ -247,7 +247,7 @@ namespace Library.Kernel.DataBaseHelper
         /// </summary> 
         public static object ExecuteScalar<T>(string sql, bool isStoredProc = false, IList<DBParameter> parm = null, DbTransaction tran = null)
         {
-            var db = DatabaseFactory.CreateDatabase(DBNAME);
+            var db = GetDatabase();
             var cmd = isStoredProc ? db.GetStoredProcCommand(sql) : db.GetSqlStringCommand(sql);
             if (parm != null)
             {
@@ -281,7 +281,7 @@ namespace Library.Kernel.DataBaseHelper
         /// </summary> 
         public static object ExecuteScalar(string sql, bool isStoredProc = false, IList<DBParameter> parm = null, DbTransaction tran = null)
         {
-            var db = DatabaseFactory.CreateDatabase(DBNAME);
+            var db = GetDatabase();
             var cmd = isStoredProc ? db.GetStoredProcCommand(sql) : db.GetSqlStringCommand(sql);
             if (parm != null)
             {
@@ -314,7 +314,7 @@ namespace Library.Kernel.DataBaseHelper
         /// </summary> 
         public static IDataReader ExecuteReader<T>(string sql, bool isStoredProc = false, IList<DBParameter> parm = null, DbTransaction tran = null)
         {
-            var db = DatabaseFactory.CreateDatabase(DBNAME);
+            var db = GetDatabase();
             var cmd = isStoredProc ? db.GetStoredProcCommand(sql) : db.GetSqlStringCommand(sql);
             if (parm != null)
             {
@@ -348,7 +348,7 @@ namespace Library.Kernel.DataBaseHelper
         /// </summary> 
         public static IDataReader ExecuteReader(string sql, bool isStoredProc = false, IList<DBParameter> parm = null, DbTransaction tran = null)
         {
-            var db = DatabaseFactory.CreateDatabase(DBNAME);
+            var db = GetDatabase();
             var cmd = isStoredProc ? db.GetStoredProcCommand(sql) : db.GetSqlStringCommand(sql);
             if (parm != null)
             {
@@ -375,6 +375,18 @@ namespace Library.Kernel.DataBaseHelper
             {
                 return db.ExecuteReader(cmd);
             }
+        }
+
+        /// <summary>
+        /// 获取 DataBase
+        /// </summary>
+        /// <returns></returns>
+        private static Database GetDatabase()
+        {
+            var db = DatabaseFactory.CreateDatabase(DBNAME);
+            DBNAME = null;
+
+            return db;
         }
 
         /// <summary>
